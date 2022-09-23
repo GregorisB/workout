@@ -13,12 +13,12 @@ router.route('/add-workout')
    .post(createWorkoutLogic);
 
 // GET workout
-router.get('/workoutId', displayWorkout);
+router.get('/:id', displayWorkout);
 
 // UPDATE workout
-router.patch('/workoutId', updateWorkout);
+router.patch('/:id', updateWorkout);
 
 // DELETE workout
-router.delete('/workoutId', deleteWorkout);
+router.delete('/:id', deleteWorkout);
 
 export default router;

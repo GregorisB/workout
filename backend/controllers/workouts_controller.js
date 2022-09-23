@@ -1,36 +1,42 @@
+import mongoose from "mongoose";
 import Workout from '../models/workout_model.js';
 // GET workout list
-export function displayWorkoutList(req, res) {
-	res.json({ title: 'Workouts list' });
+export const displayWorkoutList = async (req, res) => {
+   const workout = await Workout.find();
+	res.status(200).json({ title: 'Workout List', workout });
 }
 
 // GET workout
-export function displayWorkout(req, res) {
-	res.json({ title: 'Workout' });
+export const displayWorkout = async (req, res) => {
+   const { id } = req.params
+   if(!mongoose.Types.ObjectId.isValid(id)) throw res.status(404).json({error: 'Workout not found'})
+   const workout = await Workout.findById(id);
+   if(!workout) throw res.status(404).json({ error: 'Workout not found' });
+   res.status(200).json({ title: 'Workout' , workout });
 }
 
 // GET||CREATE workout
-export async function createWorkout(req, res) {
-   const { title, reps, load } = req.body;
+export const createWorkout = (req, res) => {
+	res.status(200).json({ title: 'Create Workout' });
+}
+
+export const createWorkoutLogic = async (req, res) => {
+	const { title, reps, load } = req.body;
    try {
       const workout = await Workout.create({title, reps, load});
-      res.json({ title: workout });
+      res.status(200).json({ title: 'Create Workout', workout });
    } catch (error) {
-      res.json({  error: error.message });
+      res.json({  title: 'Create Workout', error: error.message });
       
    }
 }
 
-export function createWorkoutLogic(req, res) {
-	res.json({ title: 'POST a workout' });
-}
-
 // UPDATE workout
-export function updateWorkout(req, res) {
-   res.json({ title: 'Update workout' });
+export const updateWorkout = (req, res) => {
+   res.status(200).json({ title: 'Update workout' });
 }
 
 // DELETE workout
-export function deleteWorkout(req, res) {
-   res.json({ title: 'Delete workout' });
+export const deleteWorkout = (req, res) => {
+   res.status(200).json({ title: 'Delete workout' });
 }
