@@ -14,7 +14,8 @@
     "http-errors": "~1.6.3",
     "log4js": "^6.6.1",
     "mongoose": "^6.6.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "run": "^1.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
