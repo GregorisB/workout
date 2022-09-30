@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 import Workout from '../models/workout_model.js';
+
 // GET workout list
 export const displayWorkoutList = async (req, res) => {
    const workout = await Workout.find();
-   res.status(200).json({ title: 'Workout List', workout });
+   res.status(200).json(workout);
 }
 
 // GET workout
