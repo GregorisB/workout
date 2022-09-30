@@ -1,7 +1,14 @@
 import { Router } from 'express';
 var router = Router();
 
-import { displayWorkoutList, createWorkout, createWorkoutLogic, displayWorkout, updateWorkout, deleteWorkout } from '../controllers/workouts_controller.js';
+import {
+   displayWorkoutList,
+   createWorkout,
+   createWorkoutLogic,
+   displayWorkout,
+   updateWorkout,
+   deleteWorkout
+} from '../controllers/workouts_controller.js';
 
 // GET workout list
 router.get('/', displayWorkoutList);
@@ -9,7 +16,7 @@ router.get('/', displayWorkoutList);
 // GET workout
 // POST workout
 router.route('/add-workout')
-   .get(createWorkout) 
+   .get(createWorkout)
    .post(createWorkoutLogic);
 
 // GET workout
