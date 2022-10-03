@@ -1,0 +1,27 @@
+{
+  "name": "mern-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install": "(cd frontend && npm install) && (cd backend && npm install)",
+    "setup": "(cd frontend && npm install) && (cd backend && npm install && npm run dev)",
+    "server": "cd backend && npm run dev",
+    "start": "cd frontend  && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GregorisB/workout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GregorisB/workout/issues"
+  },
+  "homepage": "https://github.com/GregorisB/workout#readme"
+}
